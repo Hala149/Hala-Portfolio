@@ -3,6 +3,8 @@ const toggle = document.querySelector('.toggle-menu');
 const links = document.querySelector('.links');
 toggle.addEventListener('click', () => links.classList.toggle('open'));
 
+
+
 // ===== Scroll Top =====
 const scrollTop = document.getElementById('scroll-top');
 const skillsSection = document.querySelector('.skills');
@@ -12,6 +14,8 @@ window.addEventListener('scroll', () => {
   // Scroll Top
   scrollTop.style.display = window.scrollY > 300 ? 'block' : 'none';
   
+
+
   // Skills Animation
   const sectionPos = skillsSection.getBoundingClientRect().top;
   if (sectionPos < window.innerHeight / 1.3) {
@@ -94,46 +98,130 @@ form.addEventListener('submit', e => {
 });
 
 // ===== Settings Box =====
+// ===== عناصر الإعدادات =====
 const settingsBtn = document.getElementById("settings-btn");
 const settingsBox = document.getElementById("settings-box");
 const darkToggle = document.getElementById("dark-mode-toggle");
-const fontFamily = document.getElementById("font-family");
+const colorSpans = document.querySelectorAll(".colors span");
+const fontSelect = document.getElementById("font-family");
 const resetBtn = document.getElementById("reset-btn");
-const colors = document.querySelectorAll(".colors span");
 
-settingsBtn.onclick = () => settingsBox.classList.toggle("active");
-
-// Load settings
-window.addEventListener('DOMContentLoaded', () => {
-  if(localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark');
-    darkToggle.checked = true;
-  }
-  const color = localStorage.getItem('themeColor');
-  if(color) document.documentElement.style.setProperty('--color-primary', color);
-
-  const font = localStorage.getItem('fontFamily');
-  if(font) { document.body.style.fontFamily = font; fontFamily.value = font; }
+// ===== فتح/إغلاق صندوق الإعدادات =====
+settingsBtn.addEventListener("click", () => {
+    settingsBox.classList.toggle("active");
 });
 
-// Dark Mode
-darkToggle.onchange = () => {
-  document.body.classList.toggle('dark', darkToggle.checked);
-  localStorage.setItem('darkMode', darkToggle.checked);
-};
+// ===== دالة لتطبيق الألوان =====
+function applyColors(primary, secondary, bg, text, btn, btnText, overlay, headerBg) {
+    const root = document.documentElement;
+    if(primary) root.style.setProperty('--color-primary', primary);
+    if(secondary) root.style.setProperty('--color-secondary', secondary);
+    if(bg) root.style.setProperty('--color-bg', bg);
+    if(text) root.style.setProperty('--color-text', text);
+    if(btn) root.style.setProperty('--color-btn', btn);
+    if(btnText) root.style.setProperty('--color-btn-text', btnText);
+    if(overlay) root.style.setProperty('--color-overlay', overlay);
+    if(headerBg) root.style.setProperty('--color-header-bg', headerBg);
+}
 
-// Theme Color
-colors.forEach(c => c.onclick = () => {
-  const color = c.dataset.color;
-  document.documentElement.style.setProperty('--color-primary', color);
-  localStorage.setItem('themeColor', color);
+// ===== Dark Mode Toggle =====
+darkToggle.addEventListener("change", () => {
+    if(darkToggle.checked){
+        document.body.classList.add("dark");
+        applyColors(
+            "#7FBCD2",        // primary
+            "#D49FA1",        // secondary
+            "#1c1c1c",        // bg
+            "#f2f2f2",        // text
+            "#333333",        // btn
+            "#ffffff",        // btnText
+            "rgba(0,0,0,0.7)",// overlay
+            "#0a2a40"         // header-bg
+        );
+    } else {
+        resetColors();
+    }
 });
 
-// Font Family
-fontFamily.onchange = () => {
-  document.body.style.fontFamily = fontFamily.value;
-  localStorage.setItem('fontFamily', fontFamily.value);
-};
+// ===== Theme Color Selection =====
+colorSpans.forEach(span => {
+    span.addEventListener("click", () => {
+        const primaryColor = span.dataset.color;
+        // Overlay يعتمد على اللون الأساسي
+        applyColors(
+            primaryColor,                    // primary
+            undefined,                       // secondary
+            undefined,                       // bg
+            undefined,                       // text
+            undefined,                       // btn
+            undefined,                       // btnText
+            `rgba(${hexToRgb(primaryColor)},0.7)`, // overlay
+            primaryColor                     // header-bg
+        );
+    });
+});
+// ===== تحويل Hex إلى RGB =====
+function hexToRgb(hex) {
+    hex = hex.replace('#','');
+    let r = parseInt(hex.substring(0,2),16);
+    let g = parseInt(hex.substring(2,4),16);
+    let b = parseInt(hex.substring(4,6),16);
+    return `${r},${g},${b}`;
+}
+// ===== Font Family =====
+fontSelect.addEventListener("change", () => {
+    document.body.style.fontFamily = fontSelect.value;
+});
 
-// Reset
-resetBtn.onclick = () => { localStorage.clear(); location.reload(); };
+// ===== Reset Colors =====
+resetBtn.addEventListener("click", () => {
+    darkToggle.checked = false;
+    resetColors();
+    fontSelect.value = "Arial, sans-serif";
+    document.body.style.fontFamily = fontSelect.value;
+});
+
+function resetColors() {
+    applyColors(
+        "rgb(7 40 86)",     // primary
+        "rgb(254 178 178)", // secondary
+        "#F9F9F9",          // bg
+        "#333333",          // text
+        "#DDD8BC",          // btn
+        "rgb(14 122 173)",  // btnText
+        "rgba(0,0,0,0.5)",  // overlay
+        "rgb(7 40 86)"      // header-bg
+    );
+}
+
+
+// ===== Get all bullets =====
+const bullets = document.querySelectorAll(".nav-bullets .bullet");
+
+// ===== Loop through each bullet =====
+bullets.forEach(bullet => {
+  bullet.addEventListener("click", () => {
+    const sectionSelector = bullet.dataset.section; // ".landing", ".about", إلخ
+    const section = document.querySelector(sectionSelector);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
+// ===== Optional: highlight bullet on scroll =====
+const sections = document.querySelectorAll("section"); // تأكدي الأقسام كلها tags section أو عدلي selector
+
+window.addEventListener("scroll", () => {
+  let scrollPos = window.scrollY + window.innerHeight / 2;
+
+  sections.forEach((section, index) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+      bullets.forEach(b => b.classList.remove("active"));
+      if (bullets[index]) bullets[index].classList.add("active");
+    }
+  });
+});

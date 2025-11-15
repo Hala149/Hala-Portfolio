@@ -1,28 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i");
+
 :root {
-    --color-primary:rgb(7 40 86);
-    --color-secondary:rgb(254 178 178);
-    --color-bg: #F9F9F9;
-    --color-text: #333333;
-    --color-btn: #DDD8BC;
-    --color-btn-text: rgb(14 122 173);
-    /* --default-font: "Roboto", system-ui, sans-serif;
-    --heading-font: "Raleway", sans-serif;
-    --nav-font: "Poppins", sans-serif; */
+--color-primary: #1B3C73;
+    /* Blueberry Navy */
+    --color-secondary: #A8C6E8;
+    /* Soft Ice Blue */
+    --color-bg: #F7F9FC;
+    /* Ultra Clean */
+    --color-text: #1E1E1E;
+    /* Neutral Dark */
+    --color-btn: #E2EAF4;
+    /* Pale Blue */
+    --color-btn-text: #1B3C73;
+    /* Deep Blue */
+    --color-overlay: rgba(27, 60, 115, 0.55);
+    --color-header-bg: var(--color-primary);
 }
 
-/* :root {
-    --color-primary: #1C6758;
-    --color-secondary: #d8c8b6;
-    --color-bg: #3D8361;
-    --color-text: #D6CDA4;
-    --color-btn: #d8c8b6;
-    --color-btn-text: #D6CDA4;
-    --color-primarytransition:;
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
-} */
+/* Body */
+body {
+    font-family: "Montserrat", sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* Buttons */
+.btn {
+    background: var(--color-primary);
+    color: var(--color-btn);
+    text-decoration: none;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+/* Links / Secondary Text */
+a,
+.secondary-text {
+    color: var(--color-secondary);
+    transition: all 0.3s ease;
+}
 
 * {
     box-sizing: border-box;
@@ -31,19 +58,13 @@
 }
 
 
-body {
-    font-family: "Montserrat", sans-serif;
-    /* font-family: "Roboto", system-ui,sans-serif; */
-     /* font-family: "Raleway",sans-serif; */
-    /* font-family: "Poppins", sans-serif; */
-}
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
     margin: auto;
     max-width: 1170px;
 }
+
 /* .section-card {
     max-width: 1300px;
     margin: 50px auto;
@@ -57,24 +78,6 @@ body {
     margin-bottom: 40px;
 } */
 
- .btn {
-    color: var(--color-secondary);
-    background-color: var(--color-primary);
-    text-decoration: none;
-    padding: 12px 40px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: 1px;
-    display: inline-block;
-    border-radius: 50px;
-    margin-top: 30px;
-    transition: 0.3s;
-}
- .btn:hover {
-    color: var(--color-primary);
-    background-color: var(--color-secondary);
-}
 h2 {
     font-size: 250%;
     margin-bottom: 30px;
@@ -82,23 +85,7 @@ h2 {
     text-align: center;
 }
 
-
-
-
-/* Start Settings Box */
-/* Dark Theme Variables */
-body.dark {
-    --color-bg: #1c1c1c;
-    --color-text: #f2f2f2;
-}
-
-body {
-    background: var(--color-bg);
-    color: var(--color-text);
-    transition: 0.3s ease;
-}
-
-/* زر الإعدادات */
+/* ======= Start Settings Box ======= */
 #settings-btn {
     position: fixed;
     top: 20px;
@@ -115,12 +102,12 @@ body {
     transition: 0.3s;
 }
 
-/* صندوق الإعدادات ينزلق من اليسار */
+/* Left Box */
 #settings-box {
     position: fixed;
     top: 0;
     left: -320px;
-    /* مخفي */
+    /* Hidden */
     width: 300px;
     height: 100%;
     background: var(--color-bg);
@@ -149,11 +136,10 @@ body {
     margin-bottom: 15px;
 }
 
-/* ألوان الثيم */
 .colors span {
     display: inline-block;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
     margin-right: 8px;
@@ -165,24 +151,19 @@ body {
     transform: scale(1.2);
 }
 
-/* زر Reset */
+/*  Reset */
 #reset-btn {
-    background: var(--color-primary);
     color: white;
     border: none;
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#reset-btn:hover {
-    background: #16263a;
-}
-/* End Settings Box */
-/* Start Nav Bullets */
+/* ======= End Settings Box ======= */
+/* ======= Start Nav Bullets =======*/
 .nav-bullets {
     position: fixed;
     right: 0;
@@ -219,6 +200,7 @@ body {
     pointer-events: none;
     display: none;
 }
+
 .nav-bullets .bullet .tooltip:before {
     content: '';
     border-style: solid;
@@ -232,36 +214,41 @@ body {
     transform: translateY(-50%);
 }
 
-/* End Nav Bullets */
-/* ===== Header ===== */
+/* ===== End Nav Bullets =====*/
+/* ===== Start Navigation Bar ===== */
 .main-header {
     width: 100%;
-    background-color: rgba(7, 40, 86, 0.7);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    position: absolute;
+    background: var(--color-header-bg);
+    box-shadow: 0 3px 10px rgba(14, 2, 92, 0.2);
+    /* position: absolute; */
     top: 0;
     left: 0;
     z-index: 999;
 }
+
 .main-header .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
 }
-.main-header .logo { 
-    font-family: "Cairo", sans-serif;
-     font-size: 180%;
-    letter-spacing:3px;
+
+.main-header .logo {
+    font-family: 'Baloo Paaji', cursive;
+    font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
+    /* font-size: 180%; */
+    letter-spacing: 3px;
     font-weight: bold;
     color: #fff;
     line-height: 1;
 }
+
 .main-header nav ul.links {
     list-style: none;
     display: flex;
     gap: 20px;
 }
+
 .main-header nav ul.links li a {
     text-decoration: none;
     color: #fff;
@@ -324,20 +311,26 @@ body {
     }
 }
 
-/* ===== Landing Section ===== */
+/* ===== Start Navigation Bar ===== */
+/* ===== Stat Landing Section ===== */
 .landing {
-
+    padding: 100px 200px;
+    width: 100%;
     min-height: 100vh;
-    background-image: url('../images/hero-bg1.jpg');
+    display: flex;
+    align-items: center;
+    background: url(../images/hero-bg1.jpg) no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
 }
 
 .landing .overlay {
-    background-color: rgba(7, 40, 86, 0.7);
-     /* background-color:rgba(7, 40, 86, 0.8);    */
-     position: absolute;
-     width: 100%;
+    background: var(--color-overlay);
+    /* background-color:rgba(7, 40, 86, 0.8);    */
+    position: absolute;
+    width: 100%;
     height: 100%;
     left: 0;
     top: 0;
@@ -345,18 +338,18 @@ body {
 }
 
 .intro-text {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        color: #FFF;
-        text-align: center;
-        width: 95%;
-        -webkit-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #FFF;
+    text-align: center;
+    width: 95%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 .intro-text h2 {
@@ -364,16 +357,16 @@ body {
 }
 
 .intro-text h2 span {
+    font-family: 'Baloo Paaji', cursive;
     color: var(--color-secondary);
     font-weight: 500;
 }
 
 .intro-text p {
-   font-size: 180%;
+    font-size: 180%;
     line-height: 1.6;
     margin: 25px
 }
-
 
 @media (max-width: 575px) {
     .intro-text h2 {
@@ -385,7 +378,9 @@ body {
     }
 }
 
-/* ===== About Section ===== */
+/* ===== End Landing Section ===== */
+
+/* =====  Start About Section ===== */
 .about {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -397,6 +392,7 @@ body {
     text-align: center;
     margin-bottom: 50px;
 }
+
 .about .section-title p {
     font-size: 1.1rem;
     color: var(--color-text);
@@ -412,9 +408,9 @@ body {
 
 .about-image {
     max-width: 100%;
-        height: auto;
-     flex: 1 1 300px;
-    max-width: 350px; 
+    height: auto;
+    flex: 1 1 300px;
+    max-width: 350px;
 }
 
 .about-image img {
@@ -422,7 +418,7 @@ body {
     border-radius: 10px;
     object-fit: cover;
     vertical-align: middle;
-    
+
 }
 
 .about-text {
@@ -483,9 +479,9 @@ body {
     }
 }
 
-/*--------------------------------------------------------------
-# Skills Section
---------------------------------------------------------------*/
+/* =====  End About Section ===== */
+
+/* =====  Start Skills Section ===== */
 .skills {
     padding-top: 50px;
     padding-bottom: 50px
@@ -509,6 +505,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
+
 .skills-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -517,6 +514,7 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .skill-box {
     background: #f9f9f9;
     border-radius: 10px;
@@ -571,7 +569,7 @@ body {
     .skills-content {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
-    
+
     }
 
     .skill-box {
@@ -579,7 +577,9 @@ body {
     }
 }
 
-/* Resume Sections */
+/* =====  End Skills Section ===== */
+
+/* =====  Start Resume Sections ===== */
 .resume-section {
     background-color: var(--color-bg);
     padding: 30px 20px;
@@ -621,7 +621,7 @@ body {
 
 .resume-item {
     padding: 0 0 20px 20px;
-        margin-top: -2px;
+    margin-top: -2px;
     /* padding-left: 20px; */
     border-left: 3px solid var(--color-primary);
     /* margin-bottom: 30px; */
@@ -672,16 +672,19 @@ body {
         padding-left: 15px;
     }
 }
+
 /* portfolio Section  */
 .portfolio {
     padding-top: 50px;
-        padding-bottom: 50px;
-        text-align: center;
+    padding-bottom: 50px;
+    text-align: center;
 }
+
 .portfolio p {
     padding-bottom: 20px;
     text-align: center;
 }
+
 .portfolio-filters {
     list-style: none;
     text-align: center;
@@ -740,7 +743,7 @@ body {
     padding: 10px;
     opacity: 0;
     transition: 0.3s;
-     font-size:100%;
+    font-size: 100%;
 }
 
 .portfolio-item:hover .portfolio-info {
@@ -761,9 +764,10 @@ body {
 
 @media(max-width:576px) {
     .portfolio-grid {
-     grid-template-columns: repeat(2, 1fr);
-     gap: 10px;
-        }
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     .portfolio-item {
         width: 100%;
     }
@@ -847,6 +851,7 @@ body {
 .clearfix {
     clear: both;
 }
+
 .testimonials {
     position: relative;
     padding-top: 80px;
@@ -951,38 +956,16 @@ body {
     margin: 0;
 }
 
-/* End Testimonials */
-/* Start Contact Us */
+/* ====== End Testimonials ====== */
+
+/* ====== Start Contact Us ======*/
 .contact {
     min-height: 600px;
-    background-image: url('../imgs/contact.png');
+    background-image: url('../images/contact.png');
     background-size: cover;
     padding-top: 80px;
     padding-bottom: 80px;
     position: relative;
-}
-
-.contact .overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, .6);
-    /* background-color: rgb(255 255 255 / 60%); */
-}
-
-.contact .container {
-    position: relative;
-    z-index: 2;
-}
-
-.contact h2 {
-    font-weight: bold;
-    font-size: 30px;
-    color: var(--color-primary);
-    margin: 0 0 60px;
-    text-align: center;
 }
 
 .contact form {
@@ -1010,13 +993,7 @@ body {
     }
 }
 
-/* Container */
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
+
 
 /* Section titles */
 .section-subtitle {
@@ -1026,8 +1003,8 @@ body {
 }
 
 .section-title {
-    font-size: 2rem;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 /* Form */
@@ -1077,10 +1054,11 @@ body {
         padding: 1rem;
     }
 }
+
 /* End Contact Us */
 /* Start Footer */
 .footer {
-    background-color:var(--color-primary);
+    background-color: var(--color-primary);
     color: #ffffff;
     padding: 20px 0;
     display: flex;
@@ -1147,6 +1125,7 @@ body {
         margin-top: 10px;
     }
 }
+
 /* End Footer */
 
 /* .footer {
@@ -1217,6 +1196,7 @@ body {
 
 /* Start Grid System */
 @media (min-width: 576px) {
+
     /* Small Devices => Landscape Phones */
     .container {
         max-width: 540px;
