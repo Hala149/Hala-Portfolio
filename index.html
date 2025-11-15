@@ -22,27 +22,30 @@
 <body>
   
     <!-- ===== Start Settings Box ===== -->
-    <button id="settings-btn" aria-label="settings" ><i class="fas fa-cog"></i></button>
+    <button id="settings-btn" aria-label="settings"><i class="fas fa-cog"></i></button>
+    
     <div id="settings-box">
         <h3>Settings</h3>
+    
         <!-- Dark Mode -->
         <label class="option-row">
             <span>Dark Mode</span>
             <input type="checkbox" id="dark-mode-toggle">
         </label>
-
+    
         <!-- Theme Colors -->
         <div class="option">
-            <label>Theme Color:</label>
+            <span class="label-text">Theme Color:</span>
             <div class="colors">
-                <span data-color="#1e3146" style="background:#1e3146"></span>
+                <span data-color="#1B3C73" style="background:#1B3C73"></span>
                 <span data-color="#156757" style="background:#156757"></span>
             </div>
         </div>
 
+    
         <!-- Font Family -->
         <div class="option">
-            <label>Font:</label>
+            <label for="font-family">Font:</label>
             <select id="font-family">
                 <option value="'Montserrat', sans-serif">Montserrat</option>
                 <option value="Arial, sans-serif">Arial</option>
@@ -50,15 +53,10 @@
                 <option value="'Cairo', sans-serif">Cairo</option>
             </select>
         </div>
-
+    
         <!-- Reset -->
         <button id="reset-btn" class="btn">Reset</button>
     </div>
-
-
-
-
-
     <!-- ===== End Settings Box ===== -->
 
     <!-- ===== Start Nav Bullets ===== -->
@@ -88,12 +86,15 @@
     <!-- ===== End Nav Bullets ===== -->
 
     <!-- ===== Start Navigation Bar ===== -->
-    <header class="main-header">
-        <div class="container header-container">
-            <h1 class="logo">HALA</h1>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo2.png" alt="Hala Elsadig Logo">
+            </a>
             <nav>
-                <ul class="links">
-                    <li><a href="#home" class="active">Home</a></li>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul>
+                    <li><a href="#landing" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#resume">Resume</a></li>
@@ -102,27 +103,34 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="toggle-menu" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="form">
+                    <i class="fas fa-search"></i>
+                </div>
             </nav>
         </div>
     </header>
-    <!-- ===== End Navigation Bar ===== -->
-
-    <!-- ===== Start Landing Section ===== -->
-    <section id="home" class="landing">
+    <!-- End Header -->
+    <!-- Start Landing -->
+    <div class="landing" id="landing">
         <div class="overlay"></div>
-        <div class="container">
-            <div class="intro-text">
-                <h2><span>Hala Elsadig</span></h2>
-                <p>Designer. Coder. Dreamer — turning ideas into beautiful digital experiences.</p>
-                <a href="#about" class="btn">About Me</a>
+        <div class="text">
+            <div class="content">
+                <h1>Hello!  <br> I'm Hala Elsadig.
+                </h1>
+                <p>Designer, Coder, and Dreamer, turning ideas into stunning digital experiences. I craft clean and user-friendly
+                interfaces, develop functional and interactive websites, and bring creativity, passion, and innovation to every project
+                I touch.
+                </p>
             </div>
         </div>
-    </section>
+        <ul class="bullets">
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
     <!-- ===== End Landing Section ===== -->
 
     <!-- ===== Start About Section ===== -->
@@ -222,8 +230,6 @@
                 </div>
             </div>
 
-
-
             <div class="skill-box">
                 <div class="skill-name">
                     <span> Illustrator </span><span>90%</span>
@@ -266,6 +272,33 @@
                 </div>
                 <div class="progress-bar-wrap">
                     <div class="progress-bar" data-value="75%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-name">
+                    <span>Brand Strategy</span><span>75%</span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" data-value="75%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-name">
+                    <span>Responsive Design</span><span>85%</span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" data-value="85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-name">
+                    <span>Canva</span><span>90%</span>
+                </div>
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" data-value="90%"></div>
                 </div>
             </div>
         </div>
@@ -359,297 +392,413 @@
     <!-- ===== End Resume Section ===== -->
 
     <!-- ===== Start Portfolio Section ===== -->
-    <section id="portfolio" class="portfolio section">
-        <div class="container">
-            <div class="container section-title">
-                <h2>Portfolio</h2>
-                <p>Check out my creative projects</p>
-            </div>
-
-            <!-- Portfolio Filters -->
-            <ul class="portfolio-filters">
-                <li class="filter-active" data-filter="*">All</li>
-                <li data-filter="brochure">Brochure</li>
-                <li data-filter="menu">Menu</li>
-                <li data-filter="logo">Logo</li>
-                <li data-filter="poster">Poster</li>
-                <li data-filter="visual-identity">Visual Identity</li>
-                <li data-filter="packaging">Packaging</li>
-                <li data-filter="typography">Typography</li>
-            </ul>
-
-            <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-
-                <!-- Brochure (2) -->
-                <div class="portfolio-item brochure">
-                    <img src="images/portfolio/Brochure1.jpg" alt="Brochure 1">
-                    <div class="portfolio-info">
-                        <h4>Brochure 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/Brochure1.jpg" class="preview-link" title="Brochure 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-brochure1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item brochure">
-                    <img src="images/portfolio/Brochure2.jpg" alt="Brochure 2">
-                    <div class="portfolio-info">
-                        <h4>Brochure 2</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/Brochure2.jpg" class="preview-link" title="Brochure 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-brochure2.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Menu (3) -->
-                <div class="portfolio-item menu">
-                    <img src="images/portfolio/menu1.jpg" alt="Menu 1">
-                    <div class="portfolio-info">
-                        <h4>Menu 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/menu1.jpg" class="preview-link" title="Menu 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-menu1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item menu">
-                    <img src="images/portfolio/menu2.jpg" alt="Menu 2">
-                    <div class="portfolio-info">
-                        <h4>Menu 2</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/menu2.jpg" class="preview-link" title="Menu 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-menu2.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item menu">
-                    <img src="images/portfolio/menu3.jpg" alt="Menu 3">
-                    <div class="portfolio-info">
-                        <h4>Menu 3</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/menu3.jpg" class="preview-link" title="Menu 3"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-menu3.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Logo (6) -->
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo1.jpg" alt="Logo 1">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo1.jpg" class="preview-link" title="Logo 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo2.jpg" alt="Logo 2">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo2.jpg" class="preview-link" title="Logo 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo2.jpg.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo3.jpg" alt="Logo 3">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo3.jpg" class="preview-link" title="Logo 3"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo3.jpg.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo4.jpg" alt="Logo 4">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo4.jpg" class="preview-link" title="Logo 4"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo4.jpg.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo5.jpg" alt="Logo 5">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo5.jpg" class="preview-link" title="Logo 5"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo5.jpg.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item logo">
-                    <img src="images/portfolio/logo6.jpg" alt="Logo 6">
-                    <div class="portfolio-info">
-                        <h4>Logo 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/logo6.jpg" class="preview-link" title="Logo 6"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-logo6.jpg.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Poster (5) -->
-                <div class="portfolio-item poster">
-                    <img src="images/portfolio/poster1.jpg" alt="Poster 1">
-                    <div class="portfolio-info">
-                        <h4>Poster 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/poster1.jpg" class="preview-link" title="Poster 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-poster1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item poster">
-                    <img src="images/portfolio/poster2.jpg" alt="Poster 2">
-                    <div class="portfolio-info">
-                        <h4>Poster 2</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/poster2.jpg" class="preview-link" title="Poster 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-poster2.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item poster">
-                    <img src="images/portfolio/poster3.jpg" alt="Poster 3">
-                    <div class="portfolio-info">
-                        <h4>Poster 3</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/poster3.jpg" class="preview-link" title="Poster 3"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-poster3.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item poster">
-                    <img src="images/portfolio/poster4.jpg" alt="Poster 4">
-                    <div class="portfolio-info">
-                        <h4>Poster 4</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/poster4.jpg" class="preview-link" title="Poster 4"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-poster4.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item poster">
-                    <img src="images/portfolio/poster5.jpg" alt="Poster 5">
-                    <div class="portfolio-info">
-                        <h4>Poster 5</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/poster5.jpg" class="preview-link" title="Poster 5"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-poster5.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Visual Identity (4) -->
-                <div class="portfolio-item visual-identity">
-                    <img src="images/portfolio/aluna.jpg" alt="Visual 1">
-                    <div class="portfolio-info">
-                        <h4>Visual 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/aluna.jpg" class="preview-link" title="Visual 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-visual1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item visual-identity">
-                    <img src="images/portfolio/hadeel.jpg" alt="Visual 1">
-                    <div class="portfolio-info">
-                        <h4>Visual 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/hadeel.jpg" class="preview-link" title="Visual 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-visual1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item visual-identity">
-                    <img src="images/portfolio/Yummifiy.jpg" alt="Visual 1">
-                    <div class="portfolio-info">
-                        <h4>Visual 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/Yummifiy.jpg" class="preview-link" title="Visual 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-visual1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item visual-identity">
-                    <img src="images/portfolio/PC.jpg" alt="Visual 1">
-                    <div class="portfolio-info">
-                        <h4>Visual 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/PC.jpg" class="preview-link" title="Visual 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-visual1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item visual-identity">
-                    <img src="images/portfolio/PA.jpg" alt="Visual 1">
-                    <div class="portfolio-info">
-                        <h4>Visual 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/PA.jpg" class="preview-link" title="Visual 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-visual1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Packaging (2) -->
-                <div class="portfolio-item packaging">
-                    <img src="images/portfolio/packaging1.jpg" alt="Packaging 1">
-                    <div class="portfolio-info">
-                        <h4>Packaging 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/packaging1.jpg" class="preview-link" title="Packaging 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-packaging1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item packaging">
-                    <img src="images/portfolio/packaging2.jpg" alt="Packaging 2">
-                    <div class="portfolio-info">
-                        <h4>Packaging 2</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/packaging2.jpg" class="preview-link" title="Packaging 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-packaging2.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-
-                <!-- Typography (2) -->
-                <div class="portfolio-item typography">
-                    <img src="images/portfolio/taypo1.jpg" alt="Typography 1">
-                    <div class="portfolio-info">
-                        <h4>Typography 1</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/taypo1.jpg" class="preview-link" title="Typography 1"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-typography1.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-                <div class="portfolio-item typography">
-                    <img src="images/portfolio/taypo2.jpg" alt="Typography 2">
-                    <div class="portfolio-info">
-                        <h4>Typography 2</h4>
-                        <p>Short description</p>
-                        <a href="images/portfolio/taypo2.jpg" class="preview-link" title="Typography 2"> <i
-                                class="fas fa-search"></i></a>
-                        <a href="project-typography2.html" class="details-link" title="More Details">🔗</a>
-                    </div>
-                </div>
-            </div>
+<section id="portfolio" class="portfolio section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Portfolio</h2>
+            <h3>Check out my creative projects</h3>
         </div>
-    </section>
+
+        <!-- Portfolio Filters -->
+        <ul class="portfolio-filters">
+            <li class="filter-active" data-filter="*">All</li>
+            <li data-filter="brochure">Brochure</li>
+            <li data-filter="menu">Menu</li>
+            <li data-filter="logo">Logo</li>
+            <li data-filter="poster">Poster</li>
+            <li data-filter="visual-identity">Visual Identity</li>
+            <li data-filter="packaging">Packaging</li>
+            <li data-filter="typography">Typography</li>
+        </ul>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid">
+
+            <!-- Brochure -->
+            <div class="portfolio-item brochure">
+                <img src="images/portfolio/Brochure1.jpg" alt="Brochure 1">
+                <div class="portfolio-info">
+                    <h4>Brochure 1</h4>
+                    <p>Stylish tri‑fold brochure conveying brand values</p>
+                    <a href="images/portfolio/Brochure1.jpg" class="preview-link" title="Brochure 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item brochure">
+                <img src="images/portfolio/Brochure2.jpg" alt="Brochure 2">
+                <div class="portfolio-info">
+                    <h4>Brochure 2</h4>
+                    <p>Creative corporate brochure design for business outreach</p>
+                    <a href="images/portfolio/Brochure2.jpg" class="preview-link" title="Brochure 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <div class="portfolio-item menu">
+                <img src="images/portfolio/menu1.jpg" alt="Menu 1">
+                <div class="portfolio-info">
+                    <h4>Menu 1</h4>
+                    <p>Modern restaurant menu layout with elegant visuals</p>
+                    <a href="images/portfolio/menu1.jpg" class="preview-link" title="Menu 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item menu">
+                <img src="images/portfolio/menu2.jpg" alt="Menu 2">
+                <div class="portfolio-info">
+                    <h4>Menu 2</h4>
+                    <p>Clean menu design for a chic cafe</p>
+                    <a href="images/portfolio/menu2.jpg" class="preview-link" title="Menu 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item menu">
+                <img src="images/portfolio/menu3.jpg" alt="Menu 3">
+                <div class="portfolio-info">
+                    <h4>Menu 3</h4>
+                    <p>Minimalist menu with trendy typography</p>
+                    <a href="images/portfolio/menu3.jpg" class="preview-link" title="Menu 3">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo1.jpg" alt="Logo 1">
+                <div class="portfolio-info">
+                    <h4>Logo Design 1</h4>
+                    <p>Brand identity logo with modern and unique style</p>
+                    <a href="images/portfolio/logo1.jpg" class="preview-link" title="Logo 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo2.jpg" alt="Logo 2">
+                <div class="portfolio-info">
+                    <h4>Logo Design 2</h4>
+                    <p>Creative monogram logo for a design brand</p>
+                    <a href="images/portfolio/logo2.jpg" class="preview-link" title="Logo 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo3.jpg" alt="Logo 3">
+                <div class="portfolio-info">
+                    <h4>Logo Design 3</h4>
+                    <p>Abstract logo concept for a futuristic brand</p>
+                    <a href="images/portfolio/logo3.jpg" class="preview-link" title="Logo 3">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo4.jpg" alt="Logo 4">
+                <div class="portfolio-info">
+                    <h4>Logo Design 4</h4>
+                    <p>Simple and elegant logo design for professional identity</p>
+                    <a href="images/portfolio/logo4.jpg" class="preview-link" title="Logo 4">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo5.jpg" alt="Logo 5">
+                <div class="portfolio-info">
+                    <h4>Logo Design 5</h4>
+                    <p>Creative and minimalist brand mark logo</p>
+                    <a href="images/portfolio/logo5.jpg" class="preview-link" title="Logo 5">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item logo">
+                <img src="images/portfolio/logo6.jpg" alt="Logo 6">
+                <div class="portfolio-info">
+                    <h4>Logo Design 6</h4>
+                    <p>Unique geometric logo with strong visual presence</p>
+                    <a href="images/portfolio/logo6.jpg" class="preview-link" title="Logo 6">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Poster -->
+            <div class="portfolio-item poster">
+                <img src="images/portfolio/poster1.jpg" alt="Poster 1">
+                <div class="portfolio-info">
+                    <h4>Poster 1</h4>
+                    <p>Eye-catching poster with bold typography and color</p>
+                    <a href="images/portfolio/poster1.jpg" class="preview-link" title="Poster 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item poster">
+                <img src="images/portfolio/poster2.jpg" alt="Poster 2">
+                <div class="portfolio-info">
+                    <h4>Poster 2</h4>
+                    <p>Creative event poster with modern layout</p>
+                    <a href="images/portfolio/poster2.jpg" class="preview-link" title="Poster 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item poster">
+                <img src="images/portfolio/poster3.jpg" alt="Poster 3">
+                <div class="portfolio-info">
+                    <h4>Poster 3</h4>
+                    <p>Vibrant poster concept with abstract illustration</p>
+                    <a href="images/portfolio/poster3.jpg" class="preview-link" title="Poster 3">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item poster">
+                <img src="images/portfolio/poster4.jpg" alt="Poster 4">
+                <div class="portfolio-info">
+                    <h4>Poster 4</h4>
+                    <p>Minimal poster design with typographic focus</p>
+                    <a href="images/portfolio/poster4.jpg" class="preview-link" title="Poster 4">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item poster">
+                <img src="images/portfolio/poster5.jpg" alt="Poster 5">
+                <div class="portfolio-info">
+                    <h4>Poster 5</h4>
+                    <p>Creative poster with playful graphical elements</p>
+                    <a href="images/portfolio/poster5.jpg" class="preview-link" title="Poster 5">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Identity -->
+            <div class="portfolio-item visual-identity">
+                <img src="images/portfolio/aluna.jpg" alt="Visual Identity Aluna">
+                <div class="portfolio-info">
+                    <h4>Brand Identity-Aluna</h4>
+                    <p>Comprehensive visual system and brand guideline</p>
+                    <a href="images/portfolio/aluna.jpg" class="preview-link" title="Aluna Project">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item visual-identity">
+                <img src="images/portfolio/hadeel.jpg" alt="Visual Identity Hadeel">
+                <div class="portfolio-info">
+                    <h4>Brand Identity-Hadeel</h4>
+                    <p>Elegant visual identity design for personal brand</p>
+                    <a href="images/portfolio/hadeel.jpg" class="preview-link" title="Hadeel Project">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item visual-identity">
+                <img src="images/portfolio/Yummifiy.jpg" alt="Visual Identity Yummifiy">
+                <div class="portfolio-info">
+                    <h4>Brand Identity-Yummify</h4>
+                    <p>Playful visual identity with bright colors</p>
+                    <a href="images/portfolio/Yummifiy.jpg" class="preview-link" title="Yummify Project">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item visual-identity">
+                <img src="images/portfolio/PC.jpg" alt="Visual Identity PC">
+                <div class="portfolio-info">
+                    <h4>Brand Identity-PC</h4>
+                    <p>Minimal tech brand identity with clean lines</p>
+                    <a href="images/portfolio/PC.jpg" class="preview-link" title="PC Project">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item visual-identity">
+                <img src="images/portfolio/PA.jpg" alt="Visual Identity PA">
+                <div class="portfolio-info">
+                    <h4>Brand Identity-PA</h4>
+                    <p>Sophisticated identity design with elegant typography</p>
+                    <a href="images/portfolio/PA.jpg" class="preview-link" title="PA Project">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Packaging -->
+            <div class="portfolio-item packaging">
+                <img src="images/portfolio/packaging1.jpg" alt="Packaging 1">
+                <div class="portfolio-info">
+                    <h4>Packaging 1</h4>
+                    <p>Sustainable packaging design for eco‑friendly product</p>
+                    <a href="images/portfolio/packaging1.jpg" class="preview-link" title="Packaging 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item packaging">
+                <img src="images/portfolio/packaging2.jpg" alt="Packaging 2">
+                <div class="portfolio-info">
+                    <h4>Packaging 2</h4>
+                    <p>Bright & attractive box design for a luxury brand</p>
+                    <a href="images/portfolio/packaging2.jpg" class="preview-link" title="Packaging 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="portfolio-item typography">
+                <img src="images/portfolio/taypo1.jpg" alt="Typography 1">
+                <div class="portfolio-info">
+                    <h4>Typography 1</h4>
+                    <p>Modern typographic layout with playful typefaces</p>
+                    <a href="images/portfolio/taypo1.jpg" class="preview-link" title="Typography 1">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="portfolio-item typography">
+                <img src="images/portfolio/taypo2.jpg" alt="Typography 2">
+                <div class="portfolio-info">
+                    <h4>Typography 2</h4>
+                    <p>Elegant typographic poster with serif fonts</p>
+                    <a href="images/portfolio/taypo2.jpg" class="preview-link" title="Typography 2">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="https://www.behance.net/halaelsadig" target="_blank" class="details-link"
+                        title="Visit on Behance">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!-- ===== End Portfolio Section ===== -->
 
     <!-- services section -->
@@ -659,8 +808,8 @@
             <div class="content-left">
                 <h2>What I Do?</h2>
                 <p class="desc">
-                    I specialize in crafting brand identities, designing user interfaces,
-                    producing creative visuals, and building functional, responsive web experiences.
+                    I specialize in crafting brand identities, designing user interfaces, and building functional web experiences.
+My approach blends creativity with technical skill to deliver clean, modern, and user-centered solutions that make brands stand out.
                 </p>
 
                 <p class="desc">
@@ -697,31 +846,32 @@
     </section>
 
     <!-- ===== Start Testimonials Section ===== -->
-    <div class="testimonials">
+    <div id="testimonials" class="testimonials">
         <div class="container">
-            <h2>Testimonials</h2>
+            <h2><span>Testimonials</span></h2><h3>:</h3>
+           
             <div class="ts-box">
-                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <p>The complete brand for my business was precise and very elegant. The design truly exceeded my expectations!</p>
                 <div class="person-info">
                     <img src="https://placehold.it/80/DDD" alt="">
-                    <h4>Ahmed Mosaad</h4>
-                    <p>CEO At Company</p>
+                    <h4>Hadeel Esam </h4>
+                    <p> Brand Owner</p>
                 </div>
             </div>
             <div class="ts-box">
-                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <p>The podcast poster is amazing and I absolutely loved it! The work was professional and smooth.</p>
                 <div class="person-info">
                     <img src="https://placehold.it/80/EEE" alt="">
-                    <h4>Mohamed Ibrahim</h4>
-                    <p>CEO At Company</p>
+                    <h4>Rayan Abdelkader</h4>
+                    <p>Podcast Host</p>
                 </div>
             </div>
             <div class="ts-box">
-                <p>Iam very happy with the product its amazing and i recieve it very fast and the price was amazing.</p>
+                <p>The Facebook page cover for PMP Company is fun and practical, and the design is really attractive and distinctive!</p>
                 <div class="person-info">
                     <img src="https://placehold.it/80/AAA" alt="">
-                    <h4>Sherief Ashraf</h4>
-                    <p>CEO At Company</p>
+                    <h4>Montaha Kamal</h4>
+                    <p> PMP Marketing Manager</p>
                 </div>
             </div>
         </div>
@@ -730,25 +880,41 @@
     <!-- ===== End Testimonials Section ===== -->
 
     <!-- ===== Start Contact Section ===== -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" aria-label="name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Enter Email" aria-label="email" required>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" rows="6" placeholder="Write Something" aria-label="message" required></textarea>
-                </div>
-                <button class="btn" type="submit">Send Message</button>
-                <div id="formMessage"></div>
-            </form>
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Me</h2>
+            <p>Feel free to send me a message</p>
         </div>
-    </section>
+
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form id="contact-form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write Something" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                    <p id="formMessage"></p>
+                </form>
+            </div>
+
+            <!-- Google Map -->
+            <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.231116489006!2d32.54099817554404!3d15.500654289343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e8a63c6fa0d7f%3A0x37f7e92e16d6e7d7!2sKhartoum%2C%20Sudan!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- ===== End contact Section ===== -->
 
     <!-- ===== start Footer ===== -->
@@ -759,13 +925,12 @@
 
             </p>
             <div class="social-links">
-                <a class="link" href="https://www.facebook.com/profile.php?id=100004813780516" class="facebook1"
-                    aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a class="link" href="https://www.behance.net/halaelsadig" class="behance" aria-label="behance 1"><i
+                <a class="link" href="https://www.facebook.com/profile.php?id=100004813780516" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a class="link" href="https://www.behance.net/halaelsadig"  aria-label="behance 1"><i
                         class="fab fa-behance"></i></a>
-                <a class="link" href="https://www.instagram.com/hlo_osh/" class="instagram" aria-label="Instagram1"><i
+                <a class="link" href="https://www.instagram.com/hlo_osh/" aria-label="Instagram1"><i
                         class="fab fa-instagram"></i></a>
-                <a class="link" href="https://www.linkedin.com/in/hala-elsadig-012880b0 " class="linkedin1"
+                <a class="link" href="https://www.linkedin.com/in/hala-elsadig-012880b0 " 
                     aria-label="linked-in1"><i class="fab fa-linkedin-in"></i></a>
 
             </div>
@@ -774,9 +939,10 @@
     <!-- ===== End Footer ===== -->
 
     <!-- Scroll Top Button -->
-    <a href="#" id="scroll-top" class="scroll-top">
-        &#8679;
+    <a href="#" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
     </a>
+
     <!-- Preloader -->
     <div id="preloader"></div>
     <!-- Main JS File -->
