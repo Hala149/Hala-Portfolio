@@ -7,10 +7,10 @@ toggle.addEventListener('click', () => links.classList.toggle('open'));
 // ===== Start Random Background =====
 // Array
 const landingBackgrounds = [
-    "url('../images/hero-bg1.jpg')",
-    "url('../images/hero-bg2.jpg')",
-    "url('../images/hero-bg3.jpg')",
-    "url('../images/hero-bg4.jpg')"
+    "url('images/hero-bg1.jpg')",
+    "url('images/hero-bg2.jpg')",
+    "url('images/hero-bg3.jpg')",
+    "url('images/hero-bg4.jpg')"
 ];
 
 const landing = document.getElementById("landing");
