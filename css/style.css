@@ -369,18 +369,8 @@ header nav .form i {
     max-width: 500px;
 }
 
-@media (max-width: 767px) {
-    .landing .text {
-        width: 100%;
-    }
-
-    .landing .text .content {
-        max-width: 100%;
-    }
-}
-
 .landing .text .content h2 {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: normal;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -398,13 +388,6 @@ header nav .form i {
     transform: translateY(-50%);
     color: #ddd;
 }
-
-@media (max-width: 767px) {
-    .landing .change-background {
-        display: none;
-    }
-}
-
 .landing .left {
     left: 30px;
 }
@@ -440,8 +423,59 @@ header nav .form i {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 }
+/* Responsive */
+@media (max-width: 991px) {
+    .landing {
+        min-height: 70vh;
+    }
 
-/* End Landing */
+    .landing .text {
+        width: 70%;
+        padding: 30px;
+    }
+
+    .landing .text .content {
+        max-width: 350px;
+    }
+
+    .landing .text .content h2 {
+        font-size: 2rem;
+    }
+
+    .landing .text .content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .landing {
+        min-height: 60vh;
+    }
+
+    .landing .text {
+        width: 90%;
+        padding: 5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .landing .text .content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .landing .text .content h1 {
+        font-size: 1rem;
+    }
+
+    .landing .text .content p {
+        font-size: 0.7rem;
+    }
+
+    .landing .change-background {
+        display: none;
+    }
+}
 /* ===== End Landing Section ===== */
 
 /* =====  Start About Section ===== */
@@ -517,25 +551,20 @@ header nav .form i {
     .about-content {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
     }
 
     .about-text {
         text-align: center;
         width: 100%;
     }
-
-    .about-image {
-        max-width: 250px;
-    }
-
     .about-image img {
         border-radius: 50%;
     }
 
     .about-info {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         align-items: center;
     }
 
@@ -546,17 +575,12 @@ header nav .form i {
 }
 
 @media (max-width: 576px) {
-    .about-image {
-        max-width: 180px;
-    }
-
     .about-text h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-
     .about-text .about-intro,
     .about-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 /* =====  End About Section ===== */
