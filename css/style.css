@@ -74,6 +74,28 @@ h2 span {
 ul{
     list-style: none;
 }
+/* -------------------------------
+   Skip Link (Accessibility)
+--------------------------------*/
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: top 0.3s ease;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.skip-link:focus {
+    top: 10px;
+    z-index: 100;
+}
 /* ======= Start Settings Box ======= */
 #settings-btn {
     position: fixed;
@@ -270,7 +292,7 @@ header nav .toggle-menu:hover+ul {
     top: 100px;
     width: 100%;
     left: 0;
-    background-color: rgb(0, 0, 0 / 50%);
+    background-color: var(--color-btn-text);
 }
 
 header nav ul li a {
@@ -495,16 +517,46 @@ header nav .form i {
     .about-content {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+    }
+
+    .about-text {
         text-align: center;
+        width: 100%;
+    }
+
+    .about-image {
+        max-width: 250px;
+    }
+
+    .about-image img {
+        border-radius: 50%;
     }
 
     .about-info {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+        align-items: center;
     }
+
+    .about-info ul {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
     .about-image {
-        max-width: 100%;
-        margin-bottom: 30px;
+        max-width: 180px;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-text .about-intro,
+    .about-description {
+        font-size: 0.9rem;
     }
 }
 /* =====  End About Section ===== */
@@ -1020,12 +1072,41 @@ header nav .form i {
     border-radius: 8px;
     overflow: hidden;
 }
-@media(max-width: 768px) {
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
     .contact-content {
         flex-direction: column;
+        gap: 20px;
     }
+
+    .contact-form,
+    .contact-map {
+        width: 100%;
+    }
+
+    .contact-map {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact {
+        padding: 40px 15px;
+    }
+
     .contact-map {
         height: 300px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .contact-form button {
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
 /* ======= End Contact Us ======== */
@@ -1182,5 +1263,4 @@ header nav .form i {
         max-width: 1140px;
     }
 }
-
 /* End Grid System */
