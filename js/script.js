@@ -1,7 +1,8 @@
 // ===== Mobile Menu Toggle =====
 const toggle = document.querySelector('.toggle-menu');
-const links = document.querySelector('.links');
+const links = document.querySelector('.links'); 
 toggle.addEventListener('click', () => links.classList.toggle('open'));
+
 // ===== End Menu Toggle =====
 
 // ===== Start Random Background =====
@@ -80,10 +81,14 @@ scrollTop.addEventListener('click', e => {
 
 // ===== Start Preloader =====
 window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.style.opacity = 0;
-  setTimeout(() => preloader.style.display = 'none', 500);
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    preloader.style.transition = 'opacity 0.3s ease';
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 300);
 });
+
 // ===== End Preloader =====
 
 // ===== Start Portfolio Filter =====

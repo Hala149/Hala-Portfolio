@@ -280,9 +280,28 @@ header nav ul {
 }
 
 @media (max-width:767px) {
-    header nav ul {
-        display: none;
-    }
+    header nav ul.links {
+       display: none;
+       flex-direction: column;
+       width: 40%;
+       background-color: var(--color-btn-text);
+       position: absolute;
+       top: 97px;
+       left: 0;
+       padding: 0;
+       margin: 0;
+       list-style: none;
+            
+        }
+                 header nav ul.links.open {
+                     display: flex;
+                 }
+        
+                 header nav ul.links li a {
+                     padding: 15px;
+                     border-bottom: 1px solid var(--heading-color-alt);
+                    
+                 }
 }
 
 header nav .toggle-menu:hover+ul {
@@ -446,7 +465,6 @@ header nav .form i {
         font-size: 0.95rem;
     }
 }
-
 @media (max-width: 767px) {
     .landing {
         min-height: 60vh;
@@ -558,22 +576,40 @@ header nav .form i {
         text-align: center;
         width: 100%;
     }
+        .about-text .about-intro {
+            text-align: left;
+        }
+   .about-image {
+    flex: none;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+   }
     .about-image img {
-        border-radius: 50%;
-    }
+        width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+}
 
     .about-info {
-        flex-direction: column;
+    display: flex;
+        flex-wrap: wrap;
         gap: 10px;
-        align-items: center;
+        justify-content: center;
     }
 
     .about-info ul {
-        text-align: center;
-        font-size: 0.9rem;
-    }
+        flex: 1 1 45%;
+        max-width: 48%;
+        text-align: left;
+        
 }
-
+.about-info ul li {
+    font-size: 0.85rem;
+}
+}
 @media (max-width: 576px) {
     .about-text h3 {
         font-size: 1.4rem;
@@ -655,6 +691,7 @@ header nav .form i {
 @media (max-width: 768px) {
     .skills {
         padding: 60px 0;
+        min-height: auto;
     }
 
     .skills .section-title h2 {
@@ -662,14 +699,33 @@ header nav .form i {
     }
 
     .skills-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 10px;
+            padding: 0 10px;
 
     }
 
     .skill-box {
-        padding: 20px 15px;
+        padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            background-color: #fff;
     }
+        .skill-name {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+    
+        .progress-bar-wrap {
+            height: 8px;
+            border-radius: 6px;
+        }
+    
+        .progress-bar {
+            height: 8px;
+            border-radius: 6px;
+        }
 }
 
 /* =====  End Skills Section ===== */
@@ -982,9 +1038,14 @@ header nav .form i {
 }
 @media (max-width: 767px) {
     .testimonials h2 {
-        text-align: center;
-        color: var(--color-primary);
+        font-size: 200%;
+         text-align: center;
+        background: none;
     }
+        .testimonials h2 span {
+        background: none;
+        color: var(--color-primary);
+        }
         .testimonials:before,
         .testimonials:after {
             display: none;
@@ -1223,27 +1284,32 @@ header nav .form i {
 }
 
 /* ===== Preloader ===== */
+/* ===== Preloader Overlay ===== */
 #preloader {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-bg);
-    z-index: 9999;
+    background-color: var(--color-bg, #ffffff);
+    /* خلفية متوافقة مع الموقع */
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
-#preloader::after {
-    content: '';
-    width: 50px;
-    height: 50px;
-    border: 5px solid var(--color-primary);
-    border-top-color: var(--color-secondary);
+
+/* Spinner */
+#preloader .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid var(--color-primary, #0D1B2A);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
+
+/* Spin animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -1251,6 +1317,14 @@ header nav .form i {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    #preloader .spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
     }
 }
 
