@@ -847,7 +847,6 @@ My approach blends creativity with technical skill to deliver clean, modern, and
 
         </div>
     </section>
-
     <!-- ===== Start Testimonials Section ===== -->
     <div id="testimonials" class="testimonials">
         <div class="container">
@@ -856,7 +855,7 @@ My approach blends creativity with technical skill to deliver clean, modern, and
             <div class="ts-box">
                 <p>The complete brand for my business was precise and very elegant. The design truly exceeded my expectations!</p>
                 <div class="person-info">
-                    <img src="https://placehold.it/80/DDD" alt="">
+                 <img src="https://via.placeholder.com/80/DDD/fff?text=Img1" alt="">
                     <h4>Hadeel Esam </h4>
                     <p> Brand Owner</p>
                 </div>
@@ -864,7 +863,7 @@ My approach blends creativity with technical skill to deliver clean, modern, and
             <div class="ts-box">
                 <p>The podcast poster is amazing and I absolutely loved it! The work was professional and smooth.</p>
                 <div class="person-info">
-                    <img src="https://placehold.it/80/EEE" alt="">
+                    <img src="https://via.placeholder.com/80/EEE/fff?text=Img2" alt="">
                     <h4>Rayan Abdelkader</h4>
                     <p>Podcast Host</p>
                 </div>
@@ -872,7 +871,7 @@ My approach blends creativity with technical skill to deliver clean, modern, and
             <div class="ts-box">
                 <p>The Facebook page cover for PMP Company is fun and practical, and the design is really attractive and distinctive!</p>
                 <div class="person-info">
-                    <img src="https://placehold.it/80/AAA" alt="">
+                    <img src="https://via.placeholder.com/80/AAA/fff?text=Img3" alt="">
                     <h4>Montaha Kamal</h4>
                     <p> PMP Marketing Manager</p>
                 </div>
@@ -896,28 +895,29 @@ My approach blends creativity with technical skill to deliver clean, modern, and
                 <form id="contact-form">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    
+
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Enter Email" required>
-                    
+
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Write Something" required></textarea>
-                    
+
                     <button type="submit">Send Message</button>
                     <p id="formMessage"></p>
                 </form>
             </div>
 
             <!-- Google Map -->
-            <div class="contact-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.231116489006!2d32.54099817554404!3d15.500654289343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e8a63c6fa0d7f%3A0x37f7e92e16d6e7d7!2sKhartoum%2C%20Sudan!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
-                width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div id="map" class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.231116489006!2d32.54099817554404!3d15.500654289343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x168e8a63c6fa0d7f%3A0x37f7e92e16d6e7d7!2sKhartoum%2C%20Sudan!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                    width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
 </section>
+
     <!-- ===== End contact Section ===== -->
 
     <!-- ===== start Footer ===== -->
@@ -947,11 +947,14 @@ My approach blends creativity with technical skill to deliver clean, modern, and
     </a>
 
     <!-- Preloader -->
-<div id="preloader">
-    <div class="spinner"></div>
-</div>
+<!-- <div id="preloader"><div class="spinner"></div></div> -->
     <!-- Main JS File -->
-    <script src="js/script.js"></script>
+<script src="js/script.js" defer></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_REAL_API_KEY&callback=initMap">
+</script>
+
+
+</script>
 </body>
 
 </html>

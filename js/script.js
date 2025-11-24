@@ -56,7 +56,7 @@ function resetInterval() {
 
 // ===== End Random Background =====
 
-// ===== Strat Scroll Top =====
+// ===== Scroll Top =====
 const scrollTop = document.getElementById('scroll-top');
 const skillsSection = document.querySelector('.skills');
 const skillBars = document.querySelectorAll('.progress-bar');
@@ -192,7 +192,7 @@ colorSpans.forEach((span, index) => {
     });
 });
 
-// --- الوضع الليلي ---
+// --- Dark mode---
 darkToggle.addEventListener("change", () => {
     const landingText = document.querySelector(".landing .text");
     if(darkToggle.checked){
@@ -223,10 +223,10 @@ darkToggle.addEventListener("change", () => {
     }
 });
 
-// --- الخط ---
+// --- Font ---
 fontSelect.addEventListener("change", () => { document.body.style.fontFamily = fontSelect.value; });
 
-// --- زر إعادة الضبط ---
+// --- Reset ---
 resetBtn.addEventListener("click", () => {
     darkToggle.checked = false;
     document.body.classList.remove("dark");
@@ -262,8 +262,10 @@ resetBtn.addEventListener("click", () => {
       });
   });
 
-  // ===== Contact Form =====
-  const form = document.getElementById('contactForm');
+    // ===== End Portfolio Lightbox =====
+    
+// ===== Contact Form =====
+ const form = document.getElementById('contact-form');
   const formMessage = document.getElementById('formMessage');
 
   form.addEventListener('submit', e => {
@@ -287,12 +289,16 @@ resetBtn.addEventListener("click", () => {
   });
 
   // ===== Google Map =====
-  const map = new google.maps.Map(document.getElementById("map"),{
-      center:{lat:15.5007,lng:32.5599}, 
-      zoom:12
-  });
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 15.5007, lng: 32.5599 },
+            zoom: 12
+        });
+    }
 
 });
+// =====End contact form =====
+
 // ===== Get nav bullets element =====
 document.addEventListener("DOMContentLoaded", () => {
     const navBullets = document.querySelector(".nav-bullets");
@@ -310,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Highlight active bullet
-        bullets.forEach(bullet => bullet.classList.remove("active")); // إزالة active من الكل
+        bullets.forEach(bullet => bullet.classList.remove("active")); //  Remove all active classes
         bullets.forEach(bullet => {
             const sectionSelector = bullet.dataset.section;
             const section = document.querySelector(sectionSelector);
