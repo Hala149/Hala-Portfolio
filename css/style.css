@@ -229,18 +229,20 @@ ul{
 /* Start Header */
 header {
     position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    background-color: var(--color-overlay);
+    top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background-color: var(--color-overlay);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     min-height: 97px;
+    position: relative;
+    padding: 0 15px;
 }
 
 header .container::after {
@@ -281,27 +283,26 @@ header nav ul {
 
 @media (max-width:767px) {
     header nav ul.links {
-       display: none;
-       flex-direction: column;
-       width: 40%;
-       background-color: var(--color-btn-text);
-       position: absolute;
-       top: 97px;
-       left: 0;
-       padding: 0;
-       margin: 0;
-       list-style: none;
-            
+            display: none;
+            flex-direction: column;
+            width: 40%;
+            background-color: var(--color-btn-text);
+            position: absolute;
+            top: 97px;
+            left: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
-                 header nav ul.links.open {
+        header nav ul.links.open {
                      display: flex;
-                 }
+         }
         
-                 header nav ul.links li a {
-                     padding: 15px;
-                     border-bottom: 1px solid var(--heading-color-alt);
+         header nav ul.links li a {
+        padding: 40px 10px;
+        border-bottom: 1px solid var(--heading-color-alt);
                     
-                 }
+         }
 }
 
 header nav .toggle-menu:hover+ul {

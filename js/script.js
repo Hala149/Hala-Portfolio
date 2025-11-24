@@ -1,7 +1,15 @@
 // ===== Mobile Menu Toggle =====
 const toggle = document.querySelector('.toggle-menu');
-const links = document.querySelector('.links'); 
-toggle.addEventListener('click', () => links.classList.toggle('open'));
+const links = document.querySelector('.links');
+
+toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+});
+
+links.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => links.classList.remove('open'));
+});
+
 
 // ===== End Menu Toggle =====
 
